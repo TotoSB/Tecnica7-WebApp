@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>E.E.S.T N°7</title><link rel="icon" href=img/logo.png type="image/x-icon">
+    
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+</head>
+<body>
+
+<header>
+	
+		<div class="menu">	
+			<div class="menu-toggle"></div>	
+			<ul class="ep">
+				<li class="ep2"><a href="../cicloBasico/Ciclo_basico.html"><i>Ciclo Básico</i></a>
+				<li class="ep2"><a href="../multimedios/multimedios.html"><i>Multimedios</i></a></li>
+
+				<li class="ep2"><a href="../programacion/programacion.html"><i>Programacion</i></a></li>							
+				
+				
+				<li class="ep2"><a href="../inscripcion/inscripcion.html"><i>Inscripciones</i></a></li>
+				<li class="ep2"><a href="../historia/historia.html"><i>Historia</i></a></li>
+				<li class="ep2"><a href="../contacto/contacto.html"><i>Contacto</i></a></li>
+			
+			</ul>
+		</div>
+	
+
+	<div class="escudotec">
+		<a href="#"><img src="img/logo.png" height="45px" width="45px"></a>
+	</div>
+</header>
+
+<div class="slider">
+    <ul class="ul">
+        <li><img src="img/fotoalumnos.png" alt="" class="sliderss" ></li>
+        <li><img src="img/paisaje2.png" alt="" class="sliderss"  width="800px"></li>
+        <li><img src="img/paisaje3.png" alt="" class="sliderss"  width="800px"></li>
+        <li><img src="img/paisaje4.png" alt="" class="sliderss"  width="800px"></li>
+    </ul>
+
+    <h1 class="tec7"><i>E.E.S.T N°7</i></h1>
+    
+    <div id="flechaa" class="flechita">
+    <a href="#flechaa"><img src="img/flecha.png" class="flecha" ></a>
+    </div>
+</div>
+
+<div class="contenedor" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300" >
+
+<p class="modalidades" >ORIENTACIONES</p>
+
+<div class="iconos">
+    <a  class="iconop" href="../programacion/programacion.html"><img src="img/codificacion.png" height="100px" width="100px"></a></li>
+    <a class="iconom" href="../multimedios/multimedios.html"><img src="img/campana-digital.png" height="100px" width="100px"></a></li>
+</div>
+
+<div class="txts">
+    <p class="txtprog">Programación</p></li>
+    <p class="txtmult">Multimedios</p></li>
+</div>
+
+<div class="txtins">
+
+	
+<a href="../inscripcion/inscripcion.html"><img src="img/Inscripcion.png" width="100px" height="100px" class="inscripcion"></a>
+<p>Inscripción</p></li>
+
+</div>
+
+<p class="contacto">CONTACTO</p>
+<div class="social">
+<a href="https://www.instagram.com/tecnica7ldz/"target="_blank"><img class="instagram" src="img/instagram.png" height="45px" width="45px"></a>
+
+<p class="numeros"style="font-size:30px">011 4248-6259</p>
+</div>
+
+<div class="mapita">
+<iframe class="mapita2" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13114.721495185673!2d-58.3968068!3d-34.7384502!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc61e14ed0cc44a21!2sEscuela%20Tecnica%207%20Lomas%20de%20Zamora!5e0!3m2!1ses!2sar!4v1650329442413!5m2!1ses!2sar"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+
+</div>
+<div class="rec2" data-aos="fade-up" data-aos-duration="1200">
+	<p>Envianos tu mensaje</p>
+	<form action="validar.php" method="post">
+	  <input type="text" name="nombre" placeholder="Nombre" required />
+	  <input type="text" name="Email" placeholder="E-mail" required />
+	  <input
+		type="text"
+		name="nombre2"
+		placeholder="Mensaje"
+		class="men"
+		required
+	  />
+	  <input
+		type="text"
+		name="comentario"
+		placeholder="Mensaje"
+		class="men"
+		required
+	  />
+	  <input type="submit" name="boton" value="Enviar" />
+	</form>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>AOS.init();</script>
+<script>
+
+	let menuToggle = document.querySelector('.menu-toggle');
+	let navigation = document.querySelector('.menu');
+	navigation.onclick = function(){
+		navigation.classList.toggle('active')    
+	}
+
+</script>
+</body>
+</html>

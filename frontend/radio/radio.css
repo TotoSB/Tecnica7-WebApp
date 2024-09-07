@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+:root {
+  --menu-toggle: #000;
+}
+html {
+    scroll-behavior: smooth;
+  }
+  header{
+    top: 0;
+    position: sticky;
+    z-index: 99999999;
+    background: white;
+  }
+  .ep {
+    padding: 0.7em 0;
+    
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .menu li a {
+    color: #353535;
+    font-family: "Open sans";
+    text-decoration: none;
+  }
+  
+  .menu li a:hover {
+    color: #ce7d35;
+    transition: all 0.3s;
+  }
+  .escudotec img {
+    position: absolute;
+    top: 5px;
+    left: 0px;
+  }
+  .ep .ep2 {
+    display: flex;
+    width: 90px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+  }
+  .radios{
+    margin: 2em 2em;
+    position: relative;
+    grid-template-columns: auto auto auto auto;
+   display: inline-flex;
+   flex-wrap: wrap;
+   gap: 2em;
+   justify-content: center;
+  }
+  
+.c{
+  width: 30em;
+  height: 20em;
+  text-align: center;
+}
+.item1{
+  grid-column: 1;
+}
+.item3{
+  grid-column: 1;
+}
+.cuara{
+  width: 100%;
+  height: 100%;
+  background: red;
+}
+@media (max-width: 1000px) {
+  .ep {
+    display: none;
+    transition: 0.5s;
+  }
+
+  .menu.active .ep {
+    display: block;
+    transition: 0.5s;
+    float: right;
+    position: absolute;
+    right: 3em;
+  }
+  .menu-toggle {
+    padding: 1em;
+    float: right;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+  }
+  .menu-toggle::before {
+    content: "";
+    width: 20px;
+    background: var(--menu-toggle);
+    border-radius: 5px;
+    height: 2px;
+    box-shadow: 0 6px 0 0 var(--menu-toggle);
+    position: absolute;
+    transition: 0.2s;
+  }
+  .menu-toggle::after {
+    position: absolute;
+    content: "";
+    width: 20px;
+    background: var(--menu-toggle);
+    border-radius: 5px;
+    height: 2px;
+    box-shadow: 0 -6px 0 0 var(--menu-toggle);
+    transition: 0.2s;
+  }
+  .menu.active .menu-toggle::after {
+    box-shadow: 0 0px 0 0 var(--menu-toggle);
+    transform: rotateZ(-45deg);
+    transition: 0.2s;
+  }
+  .menu.active .menu-toggle::before {
+    box-shadow: 0 0 0 0 var(--menu-toggle);
+    transform: rotateZ(45deg);
+    transition: 0.2s;
+  }
+} 
+.menu li a {
+  color: #353535;
+  font-family: "Open sans";
+  text-decoration: none;
+}
+
+.menu li a:hover {
+  color: #ce7d35;
+  transition: all 0.3s;
+}
+.que {
+  font-size: 18px;
+  text-align: center;
+  width: 70%;
+  margin-left: 2%;
+  font-family: "Merriweather", serif;
+  font-family: "Roboto Flex", sans-serif;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="contacto.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- ANIMATE CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
+<body>
+    <header>
+	
+		<div class="menu">	
+			<div class="menu-toggle"></div>	
+			<ul class="ep">
+				<li class="ep2"><a href="../cicloBasico/Ciclo_basico.html">Ciclo Básico</a>
+          <li class="ep2"><a href="../multimedios/multimedios.html">Multimedios</a></li>
+  
+          <li class="ep2"><a href="../programacion/programacion.html">Programacion</a></li>							
+          
+          
+          <li class="ep2"><a href="../inscripcion/inscripcion.html">Inscripciones</a></li>
+          <li class="ep2"><a href="../historia/historia.html">Historia</a></li>
+          <li class="ep2"><a href="../contacto/contacto.html">Contacto</a></li>
+          <li class="ep2"><a href="../radio/radio.html">Radio</a></li>
+			</ul>
+		</div>
+	
+
+	<div class="escudotec">
+		<a href="../index.html"><img src="img/logo.png" height="45px" width="45px"></a>
+	</div>
+
+</header>
+     <div class="sisi">
+  <p class="contacto">CONTACTO</p>
+  <div class="social">
+  <a href="https://www.instagram.com/tecnica7ldz/"target="_blank"><img class="instagram" src="img/instagram.png" height="45px" width="45px"></a>
+  
+  <p class="numeros"style="font-size:30px">011 4248-6259</p><!--<a  href="https://www.facebook.com/TecnicasieteLz-130834800923650/"target="_blank"><img class="face" src="img/facebook.png" width="45px" height="45px"></a>-->
+  </div>
+  
+  <div class="mapita">
+  <iframe class="mapita2" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13114.721495185673!2d-58.3968068!3d-34.7384502!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc61e14ed0cc44a21!2sEscuela%20Tecnica%207%20Lomas%20de%20Zamora!5e0!3m2!1ses!2sar!4v1650329442413!5m2!1ses!2sar"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+        
+        
+        </div>
+        <div class="content">
+
+          
+          <div class="contact-wrapper animated bounceInUp">
+              <div class="contact-form">
+               
+                  <form action="validar.php" method="post">
+                      <p>
+                          <label>Nombre Completo</label>
+                          <input type="text" name="fullname">
+                      </p>
+                      <p>
+                          <label>Email</label>
+                          <input type="email" name="email">
+                      </p>
+                      <p>
+                          <label>Numero de Telefono</label>
+                          <input type="tel" name="phone">
+                      </p>
+                      <p>
+                          <label>Asunto</label>
+                          <input type="text" name="affair">
+                      </p>
+                      <p class="block">
+                         <label>Mensaje</label> 
+                          <textarea name="message" rows="3"></textarea>
+                      </p>
+                      <p class="block">
+                          <button>
+                              Enviar
+                          </button>
+                      </p>
+                  </form>
+              </div>
+          </div>
+        
+
+</body>
+<script>
+
+	let menuToggle = document.querySelector('.menu-toggle');
+	let navigation = document.querySelector('.menu');
+	navigation.onclick = function(){
+		navigation.classList.toggle('active')    
+	}
+
+</script>
+</html>
