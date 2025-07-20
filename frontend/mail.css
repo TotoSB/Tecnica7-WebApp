@@ -1,0 +1,15 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+input
+{
+    display: block;
+  
+}
+.men
+{
+    width: 200px;
+    height: 100px;
+}

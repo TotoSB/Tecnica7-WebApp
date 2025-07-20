@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="radio.css">
+</head>
+<body>
+    <header>
+	
+		<div class="menu">
+			<div class="menu-toggle"></div>
+			<ul class="ep">
+			  <li class="ep2"><a href="../cicloBasico/Ciclo_basico.html">Ciclo Básico</a>
+				<li class="ep2"><a href="../multimedios/multimedios.html">Multimedios</a></li>
+				<li class="ep2"><a href="../programacion/programacion.html">Programacion</a></li>							
+				<li class="ep2"><a href="../inscripcion/inscripcion.html">Inscripciones</a></li>
+				<li class="ep2"><a href="../historia/historia.html">Historia</a></li>
+				<li class="ep2"><a href="../contacto/contacto.html">Contacto</a></li>
+				<li class="ep2"><a href="../radio/radio.html">Radio</a></li>
+			</ul>
+		  </div>
+
+	<div class="escudotec">
+		<a href="../index.html"><img src="img/logo.png" height="45px" width="45px"></a>
+	</div>
+</header> 
+<center><p  class="que"> La radio tiene como objetivo ampliar las trayectorias escolares de los alumnos de la tecnicatura de Multimedios diversificando el horizonte de oportunidades y experiencias educativas.<BR>
+Constituyen una nueva herramienta pedagógica que permite abordar, con diversos recursos, los contenidos curriculares a través de un canal de expresión lúdico y, a la vez, reflexivo.
+EI Proyecto propone el desarrollo de diferentes estrategias en tiempos y espacios complementarios a los de la jornada escolar que estimulen la investigacion, la expresion y el intercambio entre los alumnos, los educadores y la comunidad.<BR>
+A traves de este medio nuestros alumnos ponen en valor sus capacidades ,fortalecen el sentido de pertenencia a la institucion,  promover nuevas formas de estar en ella y consecuentemente el de mejorar en forma permanente la calidad de los aprendizajes.<BR>
+UN LUGAR DONDE TOMAN Y DAN LA PALABRA
+</p></center>
+		<center><div class="radios">
+		<div class="item1 c"><p>Radio 1</p><div id="grafo" class="cuara"></div></div>
+			<!--<div class="item2 c"><p>Radio 2</p><div id="grafo2" class="cuara"></div></div>
+			<div class="item3 c"><p>Radio 3</p><div id="grafo3" class="cuara"></div></div>
+			<div class="item4 c"><p>Radio 4</p><div id="grafo4" class="cuara"></div></div>-->
+		</div>
+		<center><p > texto presentacion ver y escuchar la radio online</p></center>
+
+		<center><p > url youtube de la radio</p></center>
+
+</center>
+	
+	
+	
+	
+	
+	
+	<script>
+
+		let menuToggle = document.querySelector('.menu-toggle');
+		let navigation = document.querySelector('.menu');
+		navigation.onclick = function(){
+			navigation.classList.toggle('active')    
+		}
+	
+	</script>
+	
+	<script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+	<script type="text/javascript">
+	/*  var options = {
+		width: "100%",
+		height: "100%",
+		channel: "mrbluwu",
+		// // only needed if your site is also embedded on embed.example.com and othersite.example.com
+		parent: ["embed.example.com", "othersite.example.com"]
+	  };
+	  var options2 = {
+		width: "100%",
+		height: "100%",
+		channel: "ElSpreen",
+		// // only needed if your site is also embedded on embed.example.com and othersite.example.com
+		parent: ["embed.example.com", "othersite.example.com"]
+	  };
+	  var options3 = {
+		width: "100%",
+		height: "100%",
+		channel: "Katana1988",
+		// // only needed if your site is also embedded on embed.example.com and othersite.example.com
+		parent: ["embed.example.com", "othersite.example.com"]
+	  };
+	  var options4 = {
+		width: "100%",
+		height: "100%",
+		channel: "JaeeV",
+		// // only needed if your site is also embedded on embed.example.com and othersite.example.com
+		parent: ["embed.example.com", "othersite.example.com"]
+	  };*/
+	  
+	  var player = new Twitch.Player("grafo", options);
+	 /* var player2 = new Twitch.Player("grafo2",options2);
+	  var player3 = new Twitch.Player("grafo3",options3);
+	  var player4 = new Twitch.Player("grafo4",options4);*/
+	  player.setVolume(0.5);
+	  player2.setVolume(0.5);
+	</script>
+	
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100;400&family=Merriweather:wght@300&display=swap');
+:root
+{
+    --menu-toggle:#000;
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+header{
+    top: 0;
+    position: sticky;
+    z-index: 99999999;
+    background: white;
+  }
+html {
+	scroll-behavior: smooth;
+}
+
+nav{
+    background: #fff;
+	width: 100%;	
+}
+.ep{
+	padding: 0.7em 0em;
+    
+	list-style: none;
+    display:flex;
+    justify-content: space-around;
+}
+
+.menu > li {
+	position: relative;
+	display: inline-block;
+}
+
+
+
+.menu li a{
+	display: inline-flex;
+	color: #353535;
+	font-family: 'Open sans';
+	text-decoration: none;
+}
+
+.menu li a:hover{
+	color: #CE7D35;
+	transition: all .3s;
+}
+
+
+.escudotec{
+	width:45px;
+	height:45px;
+
+}
+.escudotec img {
+	position: absolute;
+	top: 5px;
+	left: 10px;
+}
+
+.planilla {
+	font-family: 'Anek Devanagari', sans-serif;
+	box-shadow: 0px 0px 1px 2px #b8b7b6;
+	top: 80px;
+	position: relative;
+	color: black;
+	padding: 10px 20px;
+	text-decoration: none;
+	margin: 0 25%;
+	background: #e0e0e0;
+	
+}
+
+.docu {
+	font-family: 'Merriweather', serif;
+	padding-top: 3em;
+    text-align: center;   
+    padding-bottom: 2em;
+}
+
+.info {
+	margin-left: 10%;
+}
+
+h3 {
+	font-family: 'Merriweather', serif;
+}
+
+.plani {
+	padding-bottom: 5px;
+}
+
+.docu2 {
+	text-decoration: underline;
+	padding-top: 30px;
+	padding-bottom: 15px;
+
+}
+
+.info ul {
+	font-family: 'Merriweather', serif;
+	padding-left: 30px;
+}
+
+.info li { 
+	padding-bottom: 5px;
+}
+
+p{
+ 	font-family: 'Merriweather', serif;
+}
+.ep .ep2
+{
+    display: flex;
+    width: 100px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+}
+
+@media (max-width: 1000px){
+	
+	.ep{
+		
+        display: none;
+        transition: .5s;
+    }
+    
+    .menu.active .ep{
+		
+        display: block;
+        transition: .5s;
+		float: right;
+    }
+    .menu-toggle{
+		padding: 1em;
+        float: right;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        display: flex;
+        justify-self: center;
+        align-items: center;
+        
+    }
+    .menu-toggle::before
+    {
+        content: '';
+        width: 20px;
+        background: var(--menu-toggle);
+        border-radius: 5px;
+        height: 2px;
+        box-shadow: 0 6px 0 0 var(--menu-toggle);
+        position: absolute;
+        transition: .2s;
+    }
+    .menu-toggle::after
+    {
+        position: absolute;
+        content: '';
+        width: 20px;
+        background: var(--menu-toggle);
+        border-radius: 5px;
+        height: 2px;
+        box-shadow: 0 -6px 0 0 var(--menu-toggle);
+        transition: .2s;
+    }
+    .menu.active .menu-toggle::after
+    {
+        box-shadow: 0 0px 0 0 var(--menu-toggle);
+        transform: rotateZ(-45deg);
+        transition: .2s;
+    }
+    .menu.active .menu-toggle::before
+    {
+        box-shadow: 0 0 0 0 var(--menu-toggle);
+        transform: rotateZ(45deg);
+        transition: .2s;
+    }
+}
