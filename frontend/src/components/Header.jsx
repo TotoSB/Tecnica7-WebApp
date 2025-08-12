@@ -1,11 +1,12 @@
 import React from 'react';
+import logo from '../assets/logo.png';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <header className="bg-gray-800 text-white p-4 flex justify-between items-center">
       <div className="flex items-center">
-        <img src="/assets/logo.png" alt="Logo" className="h-10 w-10 mr-4" />
+  <img src={logo} alt="Logo" className="h-10 w-10 mr-4" />
         <Link to="/" className="text-xl font-bold">E.E.S.T N°7</Link>
       </div>
       <nav>
