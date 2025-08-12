@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import codificacion from '../assets/codificacion.png';
 import campanaDigital from '../assets/campana-digital.png';
 import inscripcion from '../assets/inscripcion.png';

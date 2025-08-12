@@ -1,14 +1,13 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import HomePage from './components/HomePage';
-import CicloBasicoPage from './components/CicloBasicoPage';
-import MultimediosPage from './components/MultimediosPage';
-import ProgramacionPage from './components/ProgramacionPage';
-import InscripcionPage from './components/InscripcionPage';
-import HistoriaPage from './components/HistoriaPage';
-import ContactoPage from './components/ContactoPage';
-import RadioPage from './components/RadioPage';
+import Header from './components/Header.tsx';
+import HomePage from './components/HomePage.tsx';
+import CicloBasicoPage from './components/CicloBasicoPage.tsx';
+import MultimediosPage from './components/MultimediosPage.tsx';
+import ProgramacionPage from './components/ProgramacionPage.tsx';
+import InscripcionPage from './components/InscripcionPage.tsx';
+import HistoriaPage from './components/HistoriaPage.tsx';
+import ContactoPage from './components/ContactoPage.tsx';
+import RadioPage from './components/RadioPage.tsx';
 
 function App() {
   return (
