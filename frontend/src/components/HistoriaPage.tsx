@@ -1,6 +1,5 @@
 
 
-import React from 'react';
 import logo from '../assets/logo.png';
 import escuela from '../assets/escuela.jpeg';
 import flecha from '../assets/flecha.png';

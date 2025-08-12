@@ -2,8 +2,6 @@
 
 import React from 'react';
 import logo from '../assets/logo.png';
-import programacion from '../assets/programacion.png';
-
 const CicloBasicoPage = () => {
   return (
     <div className="container mx-auto px-4 py-8">
