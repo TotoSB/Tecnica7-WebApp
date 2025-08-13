@@ -9,6 +9,7 @@ Paleta profesional y moderna para institución educativa técnica
 @layer base {
   :root {
     /* Backgrounds & Surfaces */
+    --border: 220 14% 96%; /* variable para border-border */
     --background: 220 50% 98%;
     --foreground: 220 40% 8%;
     --surface: 220 30% 96%;
@@ -27,6 +28,10 @@ Paleta profesional y moderna para institución educativa técnica
     --primary: 220 85% 45%;
     --primary-light: 220 85% 65%;
     --primary-dark: 220 85% 25%;
+    /* Clase personalizada para border-border */
+    .border-border {
+      border-color: hsl(var(--border));
+    }
     --primary-foreground: 0 0% 100%;
 
     /* Technical Orange Accent */
@@ -159,11 +164,14 @@ Paleta profesional y moderna para institución educativa técnica
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     background: var(--gradient-surface);
     font-feature-settings: "rlig" 1, "calt" 1;
   }
