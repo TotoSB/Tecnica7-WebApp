@@ -11,7 +11,7 @@ export const getAllTeachers = async (req: Request, res: Response, next: NextFunc
     `;
     const result = await db.query(query);
     res.json(result.rows);
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error fetching teachers:', error);
     next(error);
   }
@@ -32,7 +32,7 @@ export const getTeacherById = async (req: Request, res: Response, next: NextFunc
       return res.status(404).json({ message: 'Profesor no encontrado.' });
     }
     res.json(result.rows[0]);
-  } catch (error) {
+  } catch (error: any) {
     console.error(`Error fetching teacher ${id}:`, error);
     next(error);
   }
@@ -69,7 +69,7 @@ export const createTeacher = async (req: Request, res: Response, next: NextFunct
       teacherId: newTeacherId,
       userId: newUserId
     });
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error creating teacher:', error);
     if (error.code === '23505') { // unique_violation
       return res.status(409).json({ message: 'El email ya está en uso.' });
@@ -103,7 +103,7 @@ export const updateTeacher = async (req: Request, res: Response, next: NextFunct
     await db.query(teacherQuery, [bio, id]);
 
     res.status(200).json({ message: `Profesor ${id} actualizado con éxito.` });
-  } catch (error) {
+  } catch (error: any) {
     console.error(`Error updating teacher ${id}:`, error);
     if (error.code === '23505') {
       return res.status(409).json({ message: 'El email ya está en uso por otro usuario.' });
@@ -129,7 +129,7 @@ export const deleteTeacher = async (req: Request, res: Response, next: NextFunct
     await db.query("DELETE FROM Users WHERE user_id = $1", [userId]);
 
     res.status(200).json({ message: `Profesor ${id} y su usuario asociado han sido eliminados.` });
-  } catch (error) {
+  } catch (error: any) {
     console.error(`Error deleting teacher ${id}:`, error);
     next(error);
   }

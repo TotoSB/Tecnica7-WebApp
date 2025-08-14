@@ -1,13 +1,13 @@
 import app from './app';
 import config from './config';
-import { createEtherealTestAccountIfNeeded } from './services/mail.service'; // Importar la función
+import { createEtherealTestAccount } from './services/mail.service'; // Importar la función
 
 const PORT = config.port;
 
 const startServer = async () => {
   // Crear cuenta de Ethereal si es necesario (solo en desarrollo y si está configurado para Ethereal)
   if (process.env.NODE_ENV !== 'production' && config.mail.host === 'smtp.ethereal.email') {
-    await createEtherealTestAccountIfNeeded();
+    await createEtherealTestAccount();
   }
 
   app.listen(PORT, () => {
