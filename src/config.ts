@@ -1,10 +1,22 @@
 import dotenv from 'dotenv';
+import { URL } from 'url';
 
 dotenv.config();
 
+const databaseUrl = new URL(process.env.DATABASE_URL || 'postgresql://user:password@localhost:5432/mydb?schema=public');
+
+export const dbConfig = {
+  user: databaseUrl.username,
+  password: databaseUrl.password,
+  host: databaseUrl.hostname,
+  port: parseInt(databaseUrl.port, 10),
+  database: databaseUrl.pathname.split('/')[1], // Extrae el nombre de la base de datos del path
+};
+
 const config = {
   port: process.env.PORT ? parseInt(process.env.PORT, 10) : 3000,
-  databaseUrl: process.env.DATABASE_URL || 'postgresql://user:password@localhost:5432/mydb?schema=public',
+  databaseUrl: process.env.DATABASE_URL,
+  jwtSecret: process.env.JWT_SECRET || 'SUPER_SECRET_KEY_CHANGE_IN_PRODUCTION',
   mail: {
     host: process.env.MAIL_HOST || 'smtp.ethereal.email', // Usar Ethereal para pruebas por defecto
     port: process.env.MAIL_PORT ? parseInt(process.env.MAIL_PORT, 10) : 587,
