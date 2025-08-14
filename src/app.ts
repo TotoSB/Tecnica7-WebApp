@@ -1,7 +1,9 @@
 import express, { Express, Request, Response, NextFunction } from 'express';
 import path from 'path';
 import config from './config';
-import contactRoutes from './routes/contact.route'; // Importar la ruta de contacto
+import contactRoutes from './routes/contact.route';
+import authRoutes from './routes/auth.route';
+import teacherRoutes from './routes/teacher.route';
 
 const app: Express = express();
 
@@ -22,8 +24,10 @@ app.get('/api/health', (req: Request, res: Response) => {
   res.status(200).json({ status: 'UP', message: 'Server is healthy' });
 });
 
-// Rutas de la API (se agregarán aquí)
-app.use('/api/contact', contactRoutes); // Registrar la ruta de contacto
+// Rutas de la API
+app.use('/api/contact', contactRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/teachers', teacherRoutes);
 
 // Middleware para manejar errores 404 (Not Found)
 app.use((req: Request, res: Response, next: NextFunction) => {

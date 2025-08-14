@@ -1,23 +1,31 @@
-import { PrismaClient } from '@prisma/client';
+import { Pool } from 'pg';
+import { dbConfig } from '../config';
 
-let prisma: PrismaClient;
+// Crea un pool de conexiones a la base de datos.
+// El pool gestiona eficientemente las conexiones, reutilizándolas
+// para mejorar el rendimiento y la escalabilidad.
+const pool = new Pool({
+  user: dbConfig.user,
+  host: dbConfig.host,
+  database: dbConfig.database,
+  password: dbConfig.password,
+  port: dbConfig.port,
+});
 
-if (process.env.NODE_ENV === 'production') {
-  prisma = new PrismaClient();
-} else {
-  // En desarrollo, evita crear múltiples instancias de PrismaClient debido al hot-reloading.
-  // https://www.prisma.io/docs/guides/performance-and-optimization/connection-management#prevent-hot-reloading-from-creating-new-instances-of-prismaclient
-  if (!global.prisma) {
-    global.prisma = new PrismaClient({
-      // log: ['query', 'info', 'warn', 'error'], // Descomentar para ver logs de Prisma
-    });
-  }
-  prisma = global.prisma;
-}
+// Exportamos un objeto con un método `query` para ejecutar consultas.
+// Este es el único punto de entrada para interactuar con la base de datos,
+// lo que centraliza la lógica y facilita el manejo de errores y la depuración.
+export const db = {
+  query: (text: string, params?: any[]) => pool.query(text, params),
+};
 
-export default prisma;
+// Opcional: Escuchar el evento 'connect' para confirmar la conexión
+pool.on('connect', () => {
+  console.log('Cliente conectado al pool de la base de datos');
+});
 
-// Extender el objeto global de Node.js para incluir `prisma` en desarrollo
-declare global {
-  var prisma: PrismaClient | undefined;
-}
+// Opcional: Escuchar el evento 'error' para capturar errores del pool
+pool.on('error', (err, client) => {
+  console.error('Error inesperado en el cliente del pool de la base de datos', err);
+  process.exit(-1);
+});
