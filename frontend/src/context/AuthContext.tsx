@@ -1,23 +1,6 @@
-import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
+import React, { useState, useEffect, ReactNode } from 'react';
+import { AuthContext, User } from './AuthContextDef';
 
-// Define the shape of the user object and the context
-interface User {
-  id: number;
-  email: string;
-  role: string;
-}
-
-interface AuthContextType {
-  user: User | null;
-  token: string | null;
-  login: (token: string, user: User) => void;
-  logout: () => void;
-  isAuthenticated: boolean;
-  isLoading: boolean;
-}
-
-// Create the context with a default undefined value
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 // Define the props for the provider component
 interface AuthProviderProps {
@@ -71,13 +54,4 @@ export function AuthProvider({ children }: AuthProviderProps) {
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
-}
-
-// Custom hook to use the AuthContext
-export function useAuth() {
-  const context = useContext(AuthContext);
-  if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
-  return context;
 }
