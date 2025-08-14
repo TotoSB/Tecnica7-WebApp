@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { useAuth } from '@/context/AuthContext';
+import { useAuth } from '@/hooks/useAuth';
 import { toast } from 'sonner';
 import TeacherForm from '@/components/admin/TeacherForm';
 import {
@@ -40,7 +40,9 @@ interface Teacher {
   bio: string;
 }
 
-const apiCall = async (url: string, method: string, token: string | null, body?: any) => {
+type TeacherFormValues = Omit<Teacher, 'teacher_id'>;
+
+const apiCall = async (url:string, method: string, token: string | null, body?: Partial<Teacher>) => {
   const response = await fetch(url, {
     method,
     headers: {
@@ -80,7 +82,7 @@ const AdminTeachersPage: React.FC = () => {
   };
 
   const createMutation = useMutation({
-    mutationFn: (newTeacher: any) => apiCall('/api/teachers', 'POST', token, newTeacher),
+    mutationFn: (newTeacher: TeacherFormValues) => apiCall('/api/teachers', 'POST', token, newTeacher),
     ...mutationOptions,
     onSuccess: () => {
       toast.success('Profesor creado con éxito.');
@@ -89,7 +91,7 @@ const AdminTeachersPage: React.FC = () => {
   });
 
   const updateMutation = useMutation({
-    mutationFn: (updatedTeacher: any) => apiCall(`/api/teachers/${editingTeacher?.teacher_id}`, 'PUT', token, updatedTeacher),
+    mutationFn: (updatedTeacher: TeacherFormValues) => apiCall(`/api/teachers/${editingTeacher?.teacher_id}`, 'PUT', token, updatedTeacher),
     ...mutationOptions,
     onSuccess: () => {
       toast.success('Profesor actualizado con éxito.');
@@ -106,7 +108,7 @@ const AdminTeachersPage: React.FC = () => {
     }
   });
 
-  const handleFormSubmit = (values: any) => {
+  const handleFormSubmit = (values: TeacherFormValues) => {
     if (editingTeacher) {
       updateMutation.mutate(values);
     } else {
