@@ -44,7 +44,7 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
         roleId: newUser.role_id,
       },
     });
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error durante el registro:', error);
     if (error.code === '23505') { // unique_violation
       return res.status(409).json({ message: 'El email ya está en uso.' });
@@ -102,7 +102,7 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
       },
     });
 
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error durante el login:', error);
     next(error);
   }

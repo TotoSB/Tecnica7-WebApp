@@ -60,7 +60,7 @@ ID de Registro en BD: ${newSubmissionId}`;
       });
     }
 
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error processing contact form:', error);
     // Manejo de errores de PostgreSQL (ej. '23505' es unique_violation)
     if (error.code === '23505') {
